@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 #include<math.h>
 #include"fact.h"
 #include"add.h"
@@ -35,12 +36,18 @@ double val2;
 char on_off;
 
 
+
 //Choix : Faire tourner la calc ou quitter le programme
+
+while(1)
+{
 printf("Faire un calcul : entrez 1, Quitter le programme : entrez 2 \n");
 scanf("%s",&string[0]);
 on_off=string[0]-48;
 
-if(on_off=1){
+
+
+if(on_off==1){
 
 
 printf("Entrez une valeur\n");
@@ -53,9 +60,9 @@ scanf("%s",&string[0]);
 printf("Valeur 2 : %d\n", string[0]-48);
 val2=string[0]-48;
 
-printf("Entrez votre choix : 1 : addition, 2 : soustraction, 3 : multiplication\n");
+printf("Entrez votre choix : 1 : addition, 2 : soustraction, 3 : multiplication 4 : exp, 5 : cos\n");
 scanf("%s",&string[0]);
-printf("Choix : %d\n", string[0]-48);
+//printf("Choix : %d\n", string[0]-48);
 
 char choix;
 choix = string[0]-48;
@@ -90,10 +97,26 @@ printf("Résultat : %lf\n", res);
 
 }
 
+else if(choix==5){
+
+printf("Résultat : %lf\n",cos(val1)); 
+
 }
 
 else{
 
+printf("Choix hors de la liste\n");
+}
+}
+
+else if(on_off==2){
+
+exit(0);
+}
+
+}
+
 return 1;
+
 }
-}
+
